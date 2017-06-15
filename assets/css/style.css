@@ -29,3 +29,19 @@
 .well{
   width: 60%;
 }
+form.form-horizontal{
+  width: 60%;
+}
+.form-group{
+  overflow: auto;
+}
+.content_title{
+  text-align: center;
+  width: 20%;
+  float: left;
+  font-weight: 600;
+}
+.content_input{
+  width: 75%;
+  float: left;
+}
