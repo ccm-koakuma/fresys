@@ -45,3 +45,7 @@ form.form-horizontal{
   width: 75%;
   float: left;
 }
+.copyright{
+  text-align: center;
+  margin-top: 60px;
+}
