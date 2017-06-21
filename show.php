@@ -61,7 +61,7 @@ for($i = 0; $i < $count; $i++){
           ?>
         </tbody>
       </table>
-      <input type="button" class="btn btn-default" value="新規作成" onClick="location.href='new.html'">
+      <input type="button" class="btn btn-default" value="新規作成" onClick="location.href='new.php'">
     </div>
     <div class="copyright">
       <small>Copyright &copy; Core Creative Manager.All right reserved.</small>
