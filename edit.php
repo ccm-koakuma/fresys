@@ -1,3 +1,16 @@
+<?php
+include('dbconnect.php');
+if(!empty($_GET['id']) && isset($_GET['id'])){
+  $sql = sprintf('SELECT * FROM `friends`, `areas` WHERE areas.area_id = friends.area_id AND friends.friend_id=%s',$_GET['id']);
+  $record = mysqli_query($db,$sql) or die(mysqli_error($db));
+  while($table = mysqli_fetch_assoc($record)){
+    $datas[] = $table;
+  }
+}else{
+  header("index.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
