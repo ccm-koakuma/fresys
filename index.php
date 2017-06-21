@@ -1,6 +1,6 @@
 <?php
 include('dbconnect.php');
-$sql = sprintf('SELECT COUNT(*) AS cnt, area_name FROM `areas`, `friends` WHERE areas.area_id = friends.area_id GROUP BY area_name ORDER BY cnt DESC');
+$sql = sprintf('SELECT COUNT(*) AS `cnt`, `area_name`, areas.area_id FROM `areas`, `friends` WHERE areas.area_id = friends.area_id GROUP BY area_name ORDER BY cnt DESC');
 $record = mysqli_query($db, $sql) or die(mysqli_error($db));
 while($table = mysqli_fetch_assoc($record)){
   $datas[] = $table;
