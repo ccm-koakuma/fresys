@@ -64,7 +64,7 @@ $count_area = count($datas_area);
         <div class="form-group">
           <div class="content_title">年齢</div>
           <div class="content_input">
-            <input type="text" name="age" class="form-control" value="22">
+            <input type="text" name="age" class="form-control" value="<?php echo $datas[0]['age']; ?>">
           </div>
         </div>
         <input type="submit" class="btn btn-default" value="変更">
