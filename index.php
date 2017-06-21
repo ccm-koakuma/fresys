@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>都道府県お友達システム</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <div class="contents">
+      <div class="contents_title">
+        <h1>都道府県友達一覧</h1>
+      </div>
+      <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+          <tr>
+            <th class="ranking">ランキング</th>
+            <th class="prefectures">県名</th>
+            <th class="people_number">人数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><a href="show.html">富山</a></td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a href="show.html">石川</a></td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="copyright">
+      <small>Copyright &copy; Core Creative Manager.All right reserved.</small>
+    </div>
+  </body>
+</html>
