@@ -46,20 +46,19 @@ for($i = 0; $i < $count; $i++){
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>山田太郎</td>
-            <td>
-              <a href="edit.html"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="javascript:void(0);" onclick="destroy();"><i class="fa fa-trash"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td>安久昌和</td>
-            <td>
-              <a href="edit.html"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="javascript:void(0);" onclick="destroy();"><i class="fa fa-trash"></i></a>
-            </td>
-          </tr>
+          <?php
+          for($i = 0; $i < $count; $i++):
+          ?>
+            <tr>
+              <td><?php echo htmlspecialchars($datas[$i]['friend_name']); ?></td>
+              <td>
+                <a href="edit.html"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" onclick="destroy();"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+          <?php
+          endfor;
+          ?>
         </tbody>
       </table>
       <input type="button" class="btn btn-default" value="新規作成" onClick="location.href='new.html'">
