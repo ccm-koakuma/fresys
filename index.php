@@ -30,16 +30,17 @@ $count = count($datas);
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td><a href="show.html">富山</a></td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><a href="show.html">石川</a></td>
-            <td>2</td>
-          </tr>
+          <?php
+          for($i = 0; $i < $count; $i++):
+          ?>
+            <tr>
+              <td><?php echo $i + 1; ?></td>
+              <td><a href="show.html"><?php echo $datas[$i]['area_name']; ?></a></td>
+              <td><?php echo $datas[$i]['cnt']; ?></td>
+            </tr>
+          <?php
+          endfor;
+          ?>
         </tbody>
       </table>
     </div>
