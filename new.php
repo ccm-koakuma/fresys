@@ -1,3 +1,15 @@
+<?php
+include('dbconnect.php');
+$before_url = $_SERVER['HTTP_REFERER'];
+$before_url = explode("?id=", $before_url);
+$before_url = $before_url[1];
+$sql = sprintf('SELECT * FROM `areas` WHERE 1');
+$record = mysqli_query($db, $sql) or die(mysqli_error($db));
+while($table = mysqli_fetch_assoc($record)){
+  $datas_area[] = $table;
+}
+$count_area = count($datas_area);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,8 +36,13 @@
           <div class="content_input">
             <select class="form-control" name="area_id">
               <option value="0">出身地を選択</option>
-              <option value="0">富山</option>
-              <option value="1">石川</option>
+              <?php
+              for($i = 0; $i < $count_area; $i++):
+              ?>
+                <option name="prefecture" value="<?php echo $datas_area[$i]['area_id']; ?>" <?php if($datas_area[$i]['area_id'] == $before_url) echo 'selected'; ?>><?php echo $datas_area[$i]['area_name']; ?></option>
+              <?php
+              endfor;
+              ?>
             </select>
           </div>
         </div>
