@@ -52,7 +52,7 @@ for($i = 0; $i < $count; $i++){
             <tr>
               <td><?php echo htmlspecialchars($datas[$i]['friend_name']); ?></td>
               <td>
-                <a href="edit.html"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="edit.php?id=<?php echo $datas[$i]['friend_id']; ?>"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="javascript:void(0);" onclick="destroy();"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
