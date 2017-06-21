@@ -35,7 +35,7 @@ $count = count($datas);
           ?>
             <tr>
               <td><?php echo $i + 1; ?></td>
-              <td><a href="show.html"><?php echo $datas[$i]['area_name']; ?></a></td>
+              <td><a href="show.php?id=<?php echo $datas[$i]['area_id']; ?>"><?php echo $datas[$i]['area_name']; ?></a></td>
               <td><?php echo $datas[$i]['cnt']; ?></td>
             </tr>
           <?php
