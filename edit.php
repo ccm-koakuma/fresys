@@ -10,6 +10,12 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
   header("index.php");
   exit();
 }
+$sql = sprintf('SELECT * FROM `areas` WHERE 1');
+$record = mysqli_query($db, $sql) or die(mysqli_error($db));
+while($table = mysqli_fetch_assoc($record)){
+  $datas_area[] = $table;
+}
+$count_area = count($datas_area);
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,8 +42,13 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
           <div class="content_title">出身</div>
           <div class="content_input">
             <select class="form-control" name="area_id">
-              <option value="0">富山</option>
-              <option value="1">石川</option>
+              <?php
+              for($i = 0; $i < $count_area; $i++):
+              ?>
+                <option value="<?php echo $datas_area[$i]['area_id']; ?>" <?php if($datas[0]['area_id'] == $datas_area[$i]['area_id']) echo 'selected'; ?>><?php echo $datas_area[$i]['area_name']; ?></option>
+              <?php
+              endfor;
+              ?>
             </select>
           </div>
         </div>
