@@ -24,7 +24,7 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
   <body>
     <div class="contents">
       <div class="contents_title">
-        <h1>富山県友達一覧</h1>
+        <h1><?php echo $datas[0]['area_name']; ?>友達一覧</h1>
       </div>
       <div class="well">
         男性:2名 女性:1名
