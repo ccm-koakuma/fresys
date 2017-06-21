@@ -10,13 +10,22 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
   header("index.php");
   exit();
 }
+$count = count($datas);
+$data_male = 0;
+$data_female = 0;
+for($i = 0; $i < $count; $i++){
+  if(isset($datas[$i]['gender']) && $datas[$i]['gender'] == 'm'){
+    $data_male += 1;
+  }elseif(isset($datas[$i]['gender']) && $datas[$i]['gender'] == 'f'){
+    $data_female += 1;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>都道府県お友達システム</title>
-
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -27,7 +36,7 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
         <h1><?php echo $datas[0]['area_name']; ?>友達一覧</h1>
       </div>
       <div class="well">
-        男性:2名 女性:1名
+        男性:<?php echo $data_male; ?>名&nbsp;女性:<?php echo $data_female; ?>名
       </div>
       <table class="table table-striped table-hover table-condensed">
         <thead>
