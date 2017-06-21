@@ -45,7 +45,7 @@ $count_area = count($datas_area);
               <?php
               for($i = 0; $i < $count_area; $i++):
               ?>
-                <option value="<?php echo $datas_area[$i]['area_id']; ?>" <?php if($datas[0]['area_id'] == $datas_area[$i]['area_id']) echo 'selected'; ?>><?php echo $datas_area[$i]['area_name']; ?></option>
+                <option name="prefecture" value="<?php echo $datas_area[$i]['area_id']; ?>" <?php if($datas[0]['area_id'] == $datas_area[$i]['area_id']) echo 'selected'; ?>><?php echo $datas_area[$i]['area_name']; ?></option>
               <?php
               endfor;
               ?>
