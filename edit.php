@@ -56,8 +56,8 @@ $count_area = count($datas_area);
           <div class="content_title">性別</div>
           <div class="content_input">
             <select class="form-control" name="gender">
-              <option value="1">男性</option>
-              <option value="2">女性</option>
+              <option name="gender" value="男性" <?php if($datas[0]['gender'] == '男性') echo 'selected'; ?>>男性</option>
+              <option name="gender" value="女性" <?php if($datas[0]['gender'] == '女性') echo 'selected'; ?>>女性</option>
             </select>
           </div>
         </div>
