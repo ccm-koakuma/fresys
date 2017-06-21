@@ -29,7 +29,7 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
         <div class="form-group">
           <div class="content_title">名前</div>
           <div class="content_input">
-            <input type="text" name="name" class="form-control" value="安久　昌和">
+            <input type="text" name="name" class="form-control" value="<?php echo $datas[0]['friend_name']; ?>">
           </div>
         </div>
         <div class="form-group">
