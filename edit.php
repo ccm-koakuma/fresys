@@ -22,9 +22,6 @@ if(!empty($_POST)){
   }elseif($_POST['age'] == '' || $_POST['age'] == null){
     $errors['age'] = 'blank';
   }else{
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
     $areas_id = $_POST['area_id'];
     $sql = sprintf('UPDATE `friends` SET `friend_name` = "%s", `area_id` = "%d", `gender` = "%s", `age` = "%d" WHERE `friends`.`friend_id` = "%s"',
     mysqli_real_escape_string($db, $_POST['name']),
