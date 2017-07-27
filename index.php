@@ -1,17 +1,21 @@
 <?php
-include('dbconnect.php');
-$sql = sprintf('SELECT COUNT(*) AS `cnt`, `area_name`, areas.area_id FROM `areas`, `friends` WHERE areas.area_id = friends.area_id GROUP BY area_name ORDER BY cnt DESC');
-$record = mysqli_query($db, $sql) or die(mysqli_error($db));
-while($table = mysqli_fetch_assoc($record)){
-  $datas[] = $table;
+require('dbconnect.php');
+$sql=sprintf('SELECT COUNT(*) AS cnt, area_name, areas.area_id FROM `areas`,`friends` WHERE areas.area_id=friends.area_id GROUP BY area_name ORDER BY cnt DESC');
+$record=mysqli_query($db,$sql) or die(mysqli_error($db));
+while($table=mysqli_fetch_assoc($record)){
+    $datas[] = $table;
 }
-$count = count($datas);
+$count=count($datas);
+echo "<pre>";
+print_r($datas);
+echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>都道府県お友達システム</title>
+
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -30,17 +34,13 @@ $count = count($datas);
           </tr>
         </thead>
         <tbody>
-          <?php
-          for($i = 0; $i < $count; $i++):
-          ?>
-            <tr>
-              <td><?php echo $i + 1; ?></td>
-              <td><a href="show.php?id=<?php echo $datas[$i]['area_id']; ?>"><?php echo $datas[$i]['area_name']; ?></a></td>
-              <td><?php echo $datas[$i]['cnt']; ?></td>
-            </tr>
-          <?php
-          endfor;
-          ?>
+        <?php for($i=0; $i<$count; $i++): ?>
+          <tr>
+            <td><?php echo $i+1; ?></td>
+            <td><a href="show.php?id=<?php echo $datas[$i]['area_id']; ?>"><?php echo $datas[$i]['area_name']; ?></a></td>
+            <td><?php echo $datas[$i]['cnt']; ?></td>
+          </tr>
+        <?php endfor; ?>
         </tbody>
       </table>
     </div>
